@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore .ipynb files unless we force them into the repo with `git add -f filename`
+*.ipynb
