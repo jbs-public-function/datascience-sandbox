@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+    colorbrains:
+        image: jupyter/scipy-notebook
+        volumes:
+          - ./colorbrains:/home/jovyan/work/colorbrains
+        ports:
+          - 8888:8888
+        environment:
+            COLORBRAINS_API_CONNECTION: ${COLORBRAINS_API_CONNECTION:-http://0.0.0.0:80}
+            X_API_KEY: ${COLORBRAINS_X_API_KEY:-xyz}
+            PYTHONPYCACHEPREFIX: /usr/src/.cache/cpython/ # keep __pycache__ files out of mounted directories
